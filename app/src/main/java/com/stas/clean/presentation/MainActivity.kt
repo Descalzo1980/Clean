@@ -1,4 +1,4 @@
-package com.stas.clean
+package com.stas.clean.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val getUserNameUseCase = GetUserNameUseCase()
     private val saveUserNameUseCase = SaveUserNameUseCase()
-    private val deleteUserNameUseCase = DeleteUserNameUseCase()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,13 +25,13 @@ class MainActivity : AppCompatActivity() {
         binding.sendButton.setOnClickListener {
             val text = binding.dataEditView.text.toString()
             val params = SaveUserNameParam(name = text)
-            val result : Boolean = saveUserNameUseCase.execute(param = params)
-            binding.dataTextView.text = "Save result = $result"
+            val result : String = saveUserNameUseCase.execute(param = params)
+            binding.dataTextView.text = "$result"
         }
 
         binding.receiveButton.setOnClickListener {
             val userName : UserName = getUserNameUseCase.execute()
-            binding.dataTextView.text = "${userName.firstname}  ${userName.lastName}"
+            binding.dataTextView.text = "${userName.firstname}"
         }
 
         binding.deleteButton.setOnClickListener {

@@ -4,7 +4,7 @@ import com.stas.clean.domain.models.SaveUserNameParam
 
 class SaveUserNameUseCase {
 
-    fun execute(param: SaveUserNameParam) : Boolean {
-        return param.name.isNotEmpty()
+    fun execute(param: SaveUserNameParam) : String {
+        return param.name
     }
 }
