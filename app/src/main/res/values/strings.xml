@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Clean</string>
+    <string name="get_data">Get data</string>
+    <string name="put_data_here">Put data here</string>
+    <string name="no_data">No data</string>
+    <string name="save_data">Save data</string>
+    <string name="delete_data">Delete Data</string>
+</resources>
