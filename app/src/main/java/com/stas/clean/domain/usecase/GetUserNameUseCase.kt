@@ -1,10 +1,11 @@
 package com.stas.clean.domain.usecase
 
 import com.stas.clean.domain.models.UserName
+import com.stas.clean.domain.repository.UserRepository
 
-class GetUserNameUseCase {
+class GetUserNameUseCase(private val userRepository: UserRepository) {
 
     fun execute() : UserName{
-        return UserName(firstname = "Stas", lastName = "Leonov")
+        return userRepository.getName()
     }
 }
